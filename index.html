@@ -116,8 +116,7 @@
     <div class="hero-body">
       <h2 class="subtitle has-text-centered">
         <span class="has-text-weight-bold" style="color: #8C1515">TL;DR:</span>
-        <span class="has-text-weight-bold"><i> SeeU introduces a 2D→4D→2D pipeline that learns continuous 4D dynamics to understand 
-           and generate geometric, physically consistent content at unseen times and viewpoints.</i></span>
+        <span class="has-text-weight-bold"><i> SeeU learns the continuous 4D dynamics from 2D inputs, and generates novel content at unseen time and space.</i></span>
       </h2>
     </div>
   </div>
@@ -153,6 +152,41 @@
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+ <br/>
+
+<section class="hero teaser">
+  <div class="container is-max-widescreen">
+    <div class="hero-body">
+      <div class="content has-text-justified">
+        <h3 id="base-title" class="title has-text-centered">SeeU generates more physical motion and higher geometric consistency than baselines.</h3>
+        <p class="is-size-6 has-text-grey has-text-centered">(Click the buttons below to switch between tasks)</p>
+        <div class="base-selector">
+          <div class="buttons has-addons is-centered">
+            <button class="button is-light" onclick="changebase(this, 'Full Timespan Prediction', ['./static/videos/unseen_time/bus_input.mp4', './static/videos/base/full_time/SoM.mp4', './static/videos/unseen_time/bus_SeeU_20past_41between_20future.mp4'])">Full Timespan Prediction</button>
+            <button class="button is-light" onclick="changebase(this, 'Frame Interpolation', ['./static/videos/base/between/input.mp4', './static/videos/base/between/interany.mp4', './static/videos/base/between/SeeU.mp4'])">Frame Interpolation</button>
+            <button class="button is-light" onclick="changebase(this, 'Future Prediction', ['./static/videos/unseen_time/butterfly_input.mp4', './static/videos/base/future/cosmos.mp4', './static/videos/unseen_time/butterfly_SeeU_5past_71between_5future.mp4'])">Future Prediction</button>
+            <button class="button is-light" onclick="changebase(this, 'Camera Dolly Out', ['./static/videos/unseen_space/boat_kayak_input.mp4', './static/videos/base/dollyout/Recam.mp4', './static/videos/unseen_space/boat_kayak_SeeU_dollyout.mp4'])">Camera Dolly Out</button>
+            <button class="button is-light" onclick="changebase(this, 'Camera Dolly Right', ['./static/videos/unseen_time/starship_input.mp4', './static/videos/base/dollyright/Recam.mp4', './static/videos/base/dollyright/SeeU.mp4'])">Camera Dolly Right</button>
+            <button class="button is-light" onclick="changebase(this, 'Camera Dolly Up', ['./static/videos/base/dollyup/input.mp4', './static/videos/base/dollyup/Recam.mp4', './static/videos/base/dollyup/SeeU.mp4'])">Camera Dolly Up</button>
+            <button class="button is-light" onclick="changebase(this, 'Camera Pan Right', ['./static/videos/base/panright/input.mp4', './static/videos/base/panright/Recam.mp4', './static/videos/base/panright/SeeU.mp4'])">Camera Pan Right</button>
+            <button class="button is-light" onclick="changebase(this, 'Camera Tilt Up', ['./static/videos/unseen_time/kangaroo_input.mp4', './static/videos/base/tiltup/Recam.mp4', './static/videos/base/tiltup/SeeU.mp4'])">Camera Tilt Up</button>
+          
+          </div>
+        </div>
+       
+  
+        <div id="base-video" class="video-container">
+          <div class="video-wrapper">
+            <div class="video-item"><h6 class="title is-6">Input/Reference </h6><video id="base-video-1" autoplay loop muted controls><source src="" type="video/mp4"></video></div>
+            <div class="video-item"><h6 class="title is-6">Baseline</h6><video id="base-video-2" autoplay loop muted controls><source src="" type="video/mp4"></video></div>
+            <div class="video-item"><h6 class="title is-6">SeeU</h6><video id="base-video-3" autoplay loop muted controls><source src="" type="video/mp4"></video></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -326,38 +360,7 @@
   </div>
 </section>
 
-<section class="hero teaser">
-  <div class="container is-max-widescreen">
-    <div class="hero-body">
-      <div class="content has-text-justified">
-        <h3 id="base-title" class="title has-text-centered">SeeU generates more physical motion and higher geometric consistency than baselines.</h3>
-        <p class="is-size-6 has-text-grey has-text-centered">(Click the buttons below to switch between tasks)</p>
-        <div class="base-selector">
-          <div class="buttons has-addons is-centered">
-            <button class="button is-light" onclick="changebase(this, 'Full Timespan Prediction', ['./static/videos/unseen_time/bus_input.mp4', './static/videos/base/full_time/SoM.mp4', './static/videos/unseen_time/bus_SeeU_20past_41between_20future.mp4'])">Full Timespan Prediction</button>
-            <button class="button is-light" onclick="changebase(this, 'Frame Interpolation', ['./static/videos/base/between/input.mp4', './static/videos/base/between/interany.mp4', './static/videos/base/between/SeeU.mp4'])">Frame Interpolation</button>
-            <button class="button is-light" onclick="changebase(this, 'Future Prediction', ['./static/videos/unseen_time/butterfly_input.mp4', './static/videos/base/future/cosmos.mp4', './static/videos/unseen_time/butterfly_SeeU_5past_71between_5future.mp4'])">Future Prediction</button>
-            <button class="button is-light" onclick="changebase(this, 'Camera Dolly Out', ['./static/videos/unseen_space/boat_kayak_input.mp4', './static/videos/base/dollyout/Recam.mp4', './static/videos/unseen_space/boat_kayak_SeeU_dollyout.mp4'])">Camera Dolly Out</button>
-            <button class="button is-light" onclick="changebase(this, 'Camera Dolly Right', ['./static/videos/unseen_time/starship_input.mp4', './static/videos/base/dollyright/Recam.mp4', './static/videos/base/dollyright/SeeU.mp4'])">Camera Dolly Right</button>
-            <button class="button is-light" onclick="changebase(this, 'Camera Dolly Up', ['./static/videos/base/dollyup/input.mp4', './static/videos/base/dollyup/Recam.mp4', './static/videos/base/dollyup/SeeU.mp4'])">Camera Dolly Up</button>
-            <button class="button is-light" onclick="changebase(this, 'Camera Pan Right', ['./static/videos/base/panright/input.mp4', './static/videos/base/panright/Recam.mp4', './static/videos/base/panright/SeeU.mp4'])">Camera Pan Right</button>
-            <button class="button is-light" onclick="changebase(this, 'Camera Tilt Up', ['./static/videos/unseen_time/kangaroo_input.mp4', './static/videos/base/tiltup/Recam.mp4', './static/videos/base/tiltup/SeeU.mp4'])">Camera Tilt Up</button>
-          
-          </div>
-        </div>
-        <br/>
-  
-        <div id="base-video" class="video-container">
-          <div class="video-wrapper">
-            <div class="video-item"><h6 class="title is-6">Input/Reference </h6><video id="base-video-1" autoplay loop muted controls><source src="" type="video/mp4"></video></div>
-            <div class="video-item"><h6 class="title is-6">Baseline</h6><video id="base-video-2" autoplay loop muted controls><source src="" type="video/mp4"></video></div>
-            <div class="video-item"><h6 class="title is-6">SeeU</h6><video id="base-video-3" autoplay loop muted controls><source src="" type="video/mp4"></video></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 
 
