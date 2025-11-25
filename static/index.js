@@ -83,14 +83,33 @@ function changespacescene(name, videoSrcArray) {
   }
 }
 
-function changePhysics(name, videoSrcArray) {
+
+function changebase(name, videoSrcArray) {
   const videoPlayers = [
-    document.getElementById('physics-video-1'),
-    document.getElementById('physics-video-2'),
-    document.getElementById('physics-video-3'),
-    document.getElementById('physics-video-4'),
-    document.getElementById('physics-video-5')
+    document.getElementById('base-video-1'),
+    document.getElementById('base-video-2'),
+    document.getElementById('base-video-3'),
+    document.getElementById('base-video-4'),
+    document.getElementById('base-video-5'),
   ];
+
+  videoPlayers.forEach((player, index) => {
+    if (player && videoSrcArray[index]) {
+      player.src = videoSrcArray[index];
+    }
+  });
+
+  document.querySelectorAll('.base-selector .button').forEach(button => {
+    button.classList.remove('is-active');
+  });
+
+  const clickedButton = document.querySelector(`.base-selector .button[onclick*="${name}"]`);
+  if (clickedButton) {
+    clickedButton.classList.add('is-active');
+  }
+}
+
+
 
   videoPlayers.forEach((player, index) => {
     if (player && videoSrcArray[index]) {
@@ -117,22 +136,29 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 document.addEventListener('DOMContentLoaded', (event) => {
-  changespacescene('bus', [
-    './static/videos/unseen_space/bus_input.mp4',
-    './static/videos/unseen_space/bus_input.mp4',
-    './static/videos/unseen_space/bus_input.mp4',
-    './static/videos/unseen_space/bus_input.mp4',
-    './static/videos/unseen_time/butterfly_continuous_dynamics.mp4',
-    './static/videos/unseen_time/butterfly_SeeU_5past_71between_5future.mp4',
+  changespacescene('boat_kayak', [
+    './static/videos/unseen_space/boat_kayak_input.mp4',
+    './static/videos/unseen_space/boat_kayak_SeeU_dollyout.mp4',
+    './static/videos/unseen_space/boat_kayak_SeeU_dollyright.mp4',
+    './static/videos/unseen_space/boat_kayak_SeeU_dollyup.mp4',
+    './static/videos/unseen_space/boat_kayak_SeeU_panright.mp4',
+    './static/videos/unseen_space/boat_kayak_SeeU_tiltup.mp4',
   ]);
 });
 
 document.addEventListener('DOMContentLoaded', (event) => {
-  changePhysics('Circular Motion', [
-    './static/videos/more_results/circular_motion_1.mp4',
-    './static/videos/more_results/circular_motion_2.mp4',
-    './static/videos/more_results/circular_motion_3.mp4',
-    './static/videos/more_results/circular_motion_4.mp4',
-    './static/videos/more_results/circular_motion_5.mp4'
+  changeedit('replacement', [
+    './static/videos/video_editing/object_replacement/cows_input.mp4',
+    './static/videos/video_editing/object_replacement/cows_SeeU_object_replacement.mp4',
+    './static/videos/video_editing/object_replacement/goose_1_input.mp4',
+    './static/videos/video_editing/object_replacement/goose_1_SeeU_object_replacement.mp4',
+  ]);
+});
+
+document.addEventListener('DOMContentLoaded', (event) => {
+  changebase('Camera Dolly Right', [
+    './static/videos/unseen_time/starship_input.mp4',
+    './static/videos/base/dollyright/Recam.mp4',
+    './static/videos/base/dollyright/SeeU.mp4'
   ]);
 });
