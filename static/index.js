@@ -34,14 +34,11 @@ $(document).ready(function() {
     bulmaSlider.attach();
 })
 
-function changeMotion(name, videoSrcArray) {
+function changetimescene(name, videoSrcArray) {
   const videoPlayers = [
-    document.getElementById('motion-video-1'),
-    document.getElementById('motion-video-2'),
-    document.getElementById('motion-video-3'),
-    document.getElementById('motion-video-4'),
-    document.getElementById('motion-video-5'),
-    document.getElementById('motion-video-6')
+    document.getElementById('time-video-1'),
+    document.getElementById('time-video-2'),
+    document.getElementById('time-video-3')
   ];
 
   videoPlayers.forEach((player, index) => {
@@ -50,21 +47,24 @@ function changeMotion(name, videoSrcArray) {
     }
   });
 
-  document.querySelectorAll('.motion-selector .button').forEach(button => {
+  document.querySelectorAll('.time-selector .button').forEach(button => {
     button.classList.remove('is-active');
   });
 
-  const clickedButton = document.querySelector(`.motion-selector .button[onclick*="${name}"]`);
+  const clickedButton = document.querySelector(`.time-selector .button[onclick*="${name}"]`);
   if (clickedButton) {
     clickedButton.classList.add('is-active');
   }
 }
 
-function changePara(name, videoSrcArray) {
+function changespacescene(name, videoSrcArray) {
   const videoPlayers = [
-    document.getElementById('para-video-1'),
-    document.getElementById('para-video-2'),
-    document.getElementById('para-video-3')
+    document.getElementById('space-video-1'),
+    document.getElementById('space-video-2'),
+    document.getElementById('space-video-3'),
+    document.getElementById('space-video-4'),
+    document.getElementById('space-video-5'),
+    document.getElementById('space-video-6')
   ];
 
   videoPlayers.forEach((player, index) => {
@@ -73,11 +73,11 @@ function changePara(name, videoSrcArray) {
     }
   });
 
-  document.querySelectorAll('.para-selector .button').forEach(button => {
+  document.querySelectorAll('.space-selector .button').forEach(button => {
     button.classList.remove('is-active');
   });
 
-  const clickedButton = document.querySelector(`.para-selector .button[onclick*="${name}"]`);
+  const clickedButton = document.querySelector(`.space-selector .button[onclick*="${name}"]`);
   if (clickedButton) {
     clickedButton.classList.add('is-active');
   }
@@ -109,21 +109,21 @@ function changePhysics(name, videoSrcArray) {
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {
-  changeMotion('Deformation', [
-    './static/videos/motions/Deformation/our.mp4',
-    './static/videos/motions/Deformation/Sora.mp4',
-    './static/videos/motions/Deformation/PhysT2V.mp4',
-    './static/videos/motions/Deformation/CogVideoX.mp4',
-    './static/videos/motions/Deformation/Wan.mp4',
-    './static/videos/motions/Deformation/Veo3.mp4'
+  changetimescene('butterfly', [
+    './static/videos/unseen_time/butterfly_input.mp4',
+    './static/videos/unseen_time/butterfly_continuous_dynamics.mp4',
+    './static/videos/unseen_time/butterfly_SeeU_5past_71between_5future.mp4',
   ]);
 });
 
 document.addEventListener('DOMContentLoaded', (event) => {
-  changePara('Para #2', [
-    './static/videos/paras/set_b_prompt2.mp4',
-    './static/videos/paras/set_b_prompt5.mp4',
-    './static/videos/paras/set_b_prompt6.mp4'
+  changespacescene('bus', [
+    './static/videos/unseen_space/bus_input.mp4',
+    './static/videos/unseen_space/bus_input.mp4',
+    './static/videos/unseen_space/bus_input.mp4',
+    './static/videos/unseen_space/bus_input.mp4',
+    './static/videos/unseen_time/butterfly_continuous_dynamics.mp4',
+    './static/videos/unseen_time/butterfly_SeeU_5past_71between_5future.mp4',
   ]);
 });
 
