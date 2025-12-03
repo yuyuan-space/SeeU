@@ -68,6 +68,22 @@
       min-width: 200px;       /* 根据需要调一点 */
     }
 
+    /* 减少标题和视频的上下间距 */
+    #failure-video .title {
+      margin-bottom: 0.6rem;   /* 你可以再调成 0.4rem/0.3rem */
+    }
+
+/* 再压紧每个视频块内部的上下 padding */
+    #failure-video .video-item-small {
+      padding-top: 0rem;
+      padding-bottom: 0.3rem;  /* 也可以 0.2rem/0.1rem */
+    }
+
+/* 压紧 "Input / Output" 小标题 */
+    #failure-video .video-item-small h6 {
+      margin-bottom: 0.25rem;  /* 默认 0.5rem 以上，改小就紧了 */
+      padding-bottom: 0;
+    }
 
     /* --- NEW RULE ADDED HERE --- */
     /* This reduces the space below the h6 titles in the video items */
@@ -360,7 +376,45 @@
   </div>
 </section>
 
+<section class="hero is-small" id="failure-video">
+  <div class="container is-max-widescreen">
+    <div class="hero-body">
+      <div class="content has-text-centered">
+        <h3 class="title has-text-centered"><strong>Failure Cases</strong></h3>
 
+        <div class="video-wrapper" style="gap:8px; justify-content:center;">
+          <div class="video-item-small" style="width:18%;">
+            <h6 class="title is-6">Input</h6>
+            <video autoplay loop muted playsinline controls width="100%">
+              <source src="static/videos/failures/flamingo_input.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item-small" style="width:18%;">
+            <h6 class="title is-6">Output</h6>
+            <video autoplay loop muted playsinline controls width="100%">
+              <source src="static/videos/failures/flamingo_output.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item-small" style="width:18%;">
+            <h6 class="title is-6">Input</h6>
+            <video autoplay loop muted playsinline controls width="100%">
+              <source src="static/videos/failures/apple_input.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-item-small" style="width:18%;">
+            <h6 class="title is-6">Output</h6>
+            <video autoplay loop muted playsinline controls width="100%">
+              <source src="static/videos/failures/apple_output.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <p class="is-size-6 has-text-grey has-text-centered" style="margin-top:1rem;">
+          SeeU’s performance degrades on inputs containing thin structures or lacking texture, reflecting the limitations of camera pose estimation, tracking, and depth prediction.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 
